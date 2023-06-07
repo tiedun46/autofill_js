@@ -25,46 +25,46 @@ button.onclick = () => {
   if (!inputFile.value || !rowFill.value) {
     alert("Các trường không được để trống. Vui lòng chọn file và thử lại!");
   } else {
-    createHtml();
+    createHtml(result);
   }
 };
 
-const createHtml = (data) =>{
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        // Thêm button vào trang
-        chrome.scripting.executeScript(
-          {
-            target: { tabId: tabs[0].id },
-            function: () => {
-                // Tìm phần tử tbody của bảng trên trang web
-                const tbody = document.querySelector('tbody');
-                console.log('element',tbody);
-                console.log('data',result);
-                // if (data) {
-                //     // Tạo nội dung HTML cho các hàng của bảng
-                //     let html = '';
-                //     for (let i = 0; i < data[0].length; i++) {
-                //       var obj = data[0][i];
-                //       html += '<tr>';
-                //         html += `<td>${obj.STT}</td>`;
-                //         html += `<td>${obj["Họ tên"]}</td>`;
-                //         html += `<td>${obj["Giới tính"]}</td>`;
-                //         html += `<td>${obj["Ngày sinh"]}</td>`;
-                //       html += '</tr>';
-                //     }
-                
-                //     // Đặt nội dung HTML cho tbody của bảng
-                //     console.log(html);
-                //     tbody.innerHTML = html;
-                //     // return html;
-                //   }
-            },
-          },
-          () => {
-            if (chrome.runtime.lastError) {
-              console.error(chrome.runtime.lastError);
+const createHtml = (data) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    // Thêm button vào trang
+    chrome.scripting.executeScript(
+      {
+        target: { tabId: tabs[0].id },
+        function: (data) => {
+          // Tìm phần tử tbody của bảng trên trang web
+          const tbody = document.querySelector("tbody");
+          console.log("element", tbody);
+          console.log("data", data);
+          if (data) {
+            // Tạo nội dung HTML cho các hàng của bảng
+            let html = "";
+            for (let i = 0; i < data[0].length; i++) {
+              var obj = data[0][i];
+              html += "<tr>";
+              html += `<td>${obj.STT}</td>`;
+              html += `<td>${obj["Họ tên"]}</td>`;
+              html += `<td>${obj["Giới tính"]}</td>`;
+              html += `<td>${obj["Ngày sinh"]}</td>`;
+              html += "</tr>";
             }
+
+            // Đặt nội dung HTML cho tbody của bảng
+            console.log(html);
+            tbody.innerHTML = html;
           }
-        );
-      });
- }
+        },
+        args: [data],
+      },
+      () => {
+        if (chrome.runtime.lastError) {
+          console.error(chrome.runtime.lastError);
+        }
+      }
+    );
+  });
+};
