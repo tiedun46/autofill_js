@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script src="xlsx.full.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <style>
+      .container {
+        width: 400px;
+        height: 300px;
+        font-size: 14px;
+        /* overflow: auto; */
+      }
+      h2 {
+        font-size: 16px;
+      }
+
+      .col-lg-7 label,
+      .col-lg-7 button,
+      .col-lg-7 select,
+      .col-lg-7 input,
+      .col-lg-7 p {
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-4 row d-flex justify-content-center">
+          <h2 class="text-center">Thêm Dữ Liệu Vào Bảng</h2>
+          <div class="col-lg-7 mb-2">
+            <label for="excel_file" class="form-label">
+              Chọn file cần fill (File .xlsx phải đúng theo template mẫu)
+            </label>
+            <input class="form-control" type="file" id="excel_file" />
+          </div>
+          <div class="col-lg-7">
+            <div class="mb-2">
+              <label for="countRowFill" class="form-label">
+                Nhập số hàng bắt đầu fill
+              </label>
+              <input type="number" class="form-control" id="countRowFill" />
+            </div>
+            <div class="mb-2">
+              <label for="typeFill" class="form-label"> Chọn kiểu fill </label>
+              <select
+                id="typeFill"
+                class="form-select"
+                aria-label="Default select example"
+              >
+                <option value="1">Fill với Template</option>
+                <option value="2">Fill thường</option>
+              </select>
+            </div>
+            <button id="btn_fill_data" class="btn btn-success">
+              Fill Dữ Liệu
+            </button>
+            <br />
+            <small>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                class="link"
+              >
+                Xem hướng dẫn sử dụng
+              </a>
+            </small>
+            <br />
+            <p class="text-center mt-2">
+              Copyright © 2023 by VCS VietNam. all rights reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
