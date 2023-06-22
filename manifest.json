@@ -1,18 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Auto Fill Table",
-  "description": "Automatically add new table fields from XLSX file",
+  "name": "VCS Việt Nam - PM hỗ trợ dịch vụ công KBNN",
+  "description": "Phần mềm Hỗ trợ nhập số liệu đối chiếu NSNN lên cổng dịch vụ công KBNN",
   "permissions": ["activeTab","tabs","scripting"],
-  "version": "1.0",
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "css": ["style.css"],
-      "js": ["content_scripts.js"]
-    }
-  ],
+  "version": "1.2",
   "action": {
-    "default_title": "Auto Fill Table",
+    "default_title": "Tải Dữ Liệu Tự Động Dịch Vụ Công - VCS Việt Nam",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/logo_16.png",
@@ -23,7 +16,24 @@
       "512": "icons/logo_512.png"
     }
   },
+  "icons": {
+    "16": "icons/logo_16.png",
+    "32": "icons/logo_32.png",
+    "48": "icons/logo_48.png",
+    "72": "icons/logo_72.png",
+    "128": "icons/logo_128.png",
+    "512": "icons/logo_512.png"
+  },
   "background": {
     "service_worker": "background.js"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://dvc.vst.mof.gov.vn/*"
+      ],
+      "all_frames": false,
+      "js": ["xlsx.full.min.js", "content-script.js", "bootstrap.min.js"]
+    }
+  ]
 }

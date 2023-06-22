@@ -1,6 +1,10 @@
-console.log("Đây là backgound!");
-
-chrome.runtime.onMessage.addListener((message, sender, sendResponse)=>{
-    console.log(message);
-    sendResponse({message: "I'm background!"});
-})
+chrome.runtime.onInstalled.addListener(({ reason, version }) => {
+    if (reason === chrome.runtime.OnInstalledReason.INSTALL) {
+      showReadme();
+    }
+  });
+  
+  function showReadme(info, tab) {
+    let url = chrome.runtime.getURL("readme.html");
+    chrome.tabs.create({ url });
+  }

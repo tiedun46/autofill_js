@@ -15,10 +15,19 @@
     <link href="style.css" rel="stylesheet" />
     <style>
       .container {
-        width: 400px;
-        height: 300px;
+        width: 300px;
+        height: 100px;
         font-size: 14px;
         /* overflow: auto; */
+      }
+      .logo-vcs{
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, -50%);
+      }
+      a{
+        text-decoration: none;
       }
       h2 {
         font-size: 16px;
@@ -36,39 +45,24 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 p-4 row d-flex justify-content-center">
-          <h2 class="text-center">Thêm Dữ Liệu Vào Bảng</h2>
+        <div class="col-lg-12 p-2 row d-flex justify-content-center">
           <div class="col-lg-7 mb-2">
-            <label for="excel_file" class="form-label">
-              Chọn file cần fill (File .xlsx phải đúng theo template mẫu)
-            </label>
-            <input class="form-control" type="file" id="excel_file" />
+            <div class="heading-extension">
+              <a
+                href="https://vcsvietnam.com/"
+                target="_blank"
+                rel="noreferrer"
+                class="link"
+              >
+            <img src="https://vcsvietnam.com/images/logo-VCS-Viet-Nam.svg" class="logo-vcs" width="80"/>
+            <h4 class="mt-5 text-center">VCS Việt Nam - Phần mềm hỗ trợ dịch vụ công KBNN</h4>
+          </a>
+          </div>
           </div>
           <div class="col-lg-7">
-            <div class="mb-2">
-              <label for="countRowFill" class="form-label">
-                Nhập số hàng bắt đầu fill
-              </label>
-              <input type="number" class="form-control" id="countRowFill" />
-            </div>
-            <div class="mb-2">
-              <label for="typeFill" class="form-label"> Chọn kiểu fill </label>
-              <select
-                id="typeFill"
-                class="form-select"
-                aria-label="Default select example"
-              >
-                <option value="1">Fill với Template</option>
-                <option value="2">Fill thường</option>
-              </select>
-            </div>
-            <button id="btn_fill_data" class="btn btn-success">
-              Fill Dữ Liệu
-            </button>
-            <br />
             <small>
               <a
-                href="https://github.com"
+                href="readme.html"
                 target="_blank"
                 rel="noreferrer"
                 class="link"

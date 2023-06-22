@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/logo_16.png">
+    <title>VCS Việt Nam - Hướng Dẫn</title>
+    <link
+      href="bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="bootstrap.min.js"></script>
+    <style>
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+      section {
+        padding: 60px 0;
+        overflow: hidden;
+      }
+
+      .section-bg {
+        background-color: #f3f5fa;
+      }
+
+      .section-title {
+        text-align: center;
+        padding-bottom: 30px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        position: relative;
+        color: #37517e;
+      }
+
+      .section-title h3,
+      .section-title h4 {
+        font-size: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        position: relative;
+        color: #37517e;
+      }
+      .section-title h2::before,
+      .section-title h3::before,
+      .section-title h4::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 120px;
+        height: 1px;
+        background: #ddd;
+        bottom: 1px;
+        left: calc(50% - 60px);
+      }
+
+      .section-title h2::after,
+      .section-title h3::after,
+      .section-title h4::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: #47b2e4;
+        bottom: 0;
+        left: calc(50% - 20px);
+      }
+
+      .section-title p {
+        margin-bottom: 0;
+      }
+
+      /*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+      .team .member {
+        position: relative;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        border-radius: 5px;
+        background: #fff;
+        transition: 0.5s;
+        height: 100%;
+      }
+
+      .team .member .pic {
+        overflow: hidden;
+        width: 180px;
+        border-radius: 50%;
+      }
+
+      .team .member .pic img {
+        transition: ease-in-out 0.3s;
+      }
+
+      /* .team .member:hover {
+        transform: translateY(-10px);
+      } */
+
+      .team .member .member-info {
+        padding-left: 30px;
+      }
+
+      .team .member h4 {
+        font-weight: 700;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #37517e;
+      }
+
+      .team .member span {
+        display: block;
+        font-size: 15px;
+        padding-bottom: 10px;
+        position: relative;
+        font-weight: 500;
+      }
+
+      .team .member span::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 1px;
+        background: #cbd6e9;
+        bottom: 0;
+        left: 0;
+      }
+
+      .team .member p {
+        margin: 10px 0 0 0;
+        font-size: 14px;
+      }
+
+      .team .member .social {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .team .member .social a {
+        transition: ease-in-out 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        width: 32px;
+        height: 32px;
+        background: #eff2f8;
+      }
+
+      .team .member .social a i {
+        color: #37517e;
+        font-size: 16px;
+        margin: 0 2px;
+      }
+
+      .team .member .social a:hover {
+        background: #47b2e4;
+      }
+
+      .team .member .social a:hover i {
+        color: #fff;
+      }
+
+      .team .member .social a + a {
+        margin-left: 8px;
+      }
+
+      .mb-10 {
+        margin-bottom: 100px !important;
+      }
+
+      .mb-7 {
+        margin-bottom: 70px !important;
+      }
+
+      .p-4{
+        padding: 40px !important;
+      }
+      /* Modal */
+      @media (min-width: 576px){
+        .modal-dialog {
+            max-width: 100% !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Hướng dẫn sử dụng</h2>
+          <p style="font-size: 20px;">
+            Công cụ hỗ trợ người sử dụng tải các mẫu đối chiếu dự toán và tình
+            hình sử dụng dự toán lên cổng dịch vụ công trực tuyến của Kho bạc
+            Nhà nước. Bảng đối chiếu dự toán kinh phí ngân sách bằng hình thức
+            rút dự toán tại Kho bạc Nhà nước (mẫu số 20a, ký hiệu 01a-SDKP/ĐVDT
+            phụ lục III, Nghị định số 11/2020/NĐ-CP). Bảng đối chiếu tình hình
+            sử dụng kinh phí ngân sách bằng hình thức rút dự toán tại Kho bạc
+            Nhà nước (mẫu số 20c, ký hiệu 02a-SDKP/ĐVDT phụ lục III, Nghị định
+            số 11/2020/NĐ-CP). Hoặc tải các bảng dữ liệu các trường excel lên
+            website của bạn.
+          </p>
+        </div>
+
+        <div class="row mb-4">
+          <div class="section-title">
+            <h3 class="text-uppercase">I. Cài đặt tiện ích vào trình duyệt</h3>
+          </div>
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div class="pic">
+                <img
+                  src="images/Toturial/settings.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="member-info">
+                <h4>Yêu Cầu</h4>
+                <span>Trình Duyệt - Phần Mềm</span>
+                <p>
+                  - Trình duyệt: Các trình duyệt sử dụng Chromium (Cốc cốc,
+                  Opera, Microsoft Edge,...) <br />
+                  - Phần mềm: phần mềm kế toán của Công ty Cổ phần Công nghệ VCS
+                  Việt Nam.
+                </p>
+                <div class="social">
+                  <a href="https://www.google.com/chrome/" target="_blank">
+                    <img src="images/browser/chrome.png" alt="" width="30"/>
+                  </a>
+                  <a href="https://www.microsoft.com/en-us/edge/download?form=MA13FJ"
+                  target="_blank"
+                    ><img src="images/browser/microsoft.png" alt="" width="30"
+                  /></a>
+                  <a href="https://coccoc.com/download"
+                  target="_blank"
+                    ><img
+                      src="images/browser/coc-icon-45729.png"
+                      alt=""
+                      width="30"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-6 mt-4 mt-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="member d-flex align-items-start">
+              <div class="pic">
+                <img
+                  src="images/Toturial/image001.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="member-info">
+                <h4>Truy Cập Chrome Webstore</h4>
+                <span>Tìm Kiếm Extension: VCS Việt Nam</span>
+                <p>
+                  Tại kết quả tìm kiếm, chọn Tiện ích “VCS Việt Nam – PM hỗ trợ
+                  dịch vụ công KBNN” và thêm tiện ích.
+                </p>
+                <div class="social">
+                  <button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalIninstallEx"
+                  >
+                    Hướng dẫn chi tiết
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="row">
+          <div
+            class="col-lg-12 mb-7 mt-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="member d-flex align-items-start">
+              <div class="img_gif">
+                <img
+                  src="images/Toturial/Download_Extension.gif"
+                  width="800"
+                />
+              </div>
+              <div class="member-info">
+                <h4>Video hướng dẫn</h4>
+                <span>Download Extension: VCS Việt Nam - PM hỗ trợ dịch vụ công KBNN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-10">
+          <div class="section-title">
+            <h3 class="text-uppercase">
+              II. KẾT XUẤT DỮ LIỆU ĐỐI CHIẾU TỪ PHẦN MỀM KẾ TOÁN VCS
+            </h3>
+          </div>
+          <div class="col-lg-12 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div>
+                <img
+                  src="images/Toturial/image004.png"
+                  width="600"
+                  alt=""
+                />
+              </div>
+              <div class="member-info">
+                <h4>Kết xuất DVC KBNN</h4>
+                <p style="font-size: 20px;">
+                  Tại giao diện giao diện xem trước khi in mẫu 01a-SDKP/ĐVDT, 02a-SDKP/ĐVDT của Phần mềm Kế toán VCS, chọn <b>Kết xuất DVC KBNN</b>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-12 mt-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+          <div class="member d-flex align-items-start">
+            <div>
+              <img
+                src="images/Toturial/image005.png"
+                width="600"
+                alt=""
+              />
+            </div>
+            <div class="member-info">
+              <h4>Chọn Nơi Lưu File</h4>
+              <p style="font-size: 20px;">
+                Chọn nơi lưu trữ và đặt tên file mới (hoặc chọn file excel đã kết xuất trước đó) và ghi lại.
+              </p>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="row mb-10">
+          <div class="section-title">
+            <h3 class="text-uppercase">
+              II. TẢI DỮ LIỆU ĐỐI CHIẾU (01a-SDKP/ĐVDT, 02a-SDKP/ĐVDT)
+              LÊN CỔNG DỊCH VỤ CÔNG CỦA KHO BẠC NHÀ NƯỚC
+            </h3>
+          </div>
+          <h4 class="text-capitalize">
+            <b>1. Truy Cập Cổng Dịch Vụ Công</b>
+          </h4>
+          <div class="col-lg-12 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div>
+                <img
+                  src="images/Toturial/image006.png"
+                  width="600"
+                  alt=""
+                />
+                <img
+                  src="images/Toturial/image007.png"
+                  width="600"
+                  alt=""
+                />
+              </div>
+              <div class="member-info">
+                <h4>Tới Trang Đối Chiếu</h4>
+                <p style="font-size: 20px;">
+                  Đăng nhập vào Hệ thống Dịch vụ công KBNN: <br> 
+                  - Click vào biểu tượng <b>Danh sách DVC</b> <br>
+                  - Chọn <b>Đối chiếu, xác nhận số dư tài khoản của đơn vị giao dịch tại KBNN</b> như hình.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-12 mb-7 mt-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+          <div class="member d-flex align-items-start">
+            <div>
+              <img
+                src="images/Toturial/image008.png"
+                width="600"
+                alt=""
+              />
+            </div>
+            <div class="member-info">
+              <h4>Thêm mới đối chiếu</h4>
+              <p style="font-size: 20px;">
+                Nhấn <b>Thêm mới đối chiếu</b> để tạo các dòng đối chiếu 01a-SDKP/ĐVDT, 02a-SDKP/ĐVDT
+              </p>
+            </div>
+          </div>
+          </div>
+
+          <h4 class="text-capitalize">
+            <b>2. Tải File Đối Chiếu Lên Cổng Dịch Vụ Công KBNN</b>
+          </h4>
+          <div class="col-lg-12 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div>
+                <img
+                  src="images/Toturial/Toturial_upload.gif"
+                  width="800"
+                  alt=""
+                />
+              </div>
+              <div class="member-info">
+                <h4>Video hướng dẫn upload</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div>
+                <img
+                  src="images/Toturial/image009.png"
+                  width="600"
+                  alt=""
+                />
+              </div>
+              <div class="member-info">
+                <h4>Thông Tin Hồ Sơ</h4>
+                <p style="font-size: 20px;">
+                  Tại giao diện Thêm mới hồ sơ đối chiếu số dư:<br>
+                  - <b>(1)</b> Chọn Mã ĐVQHNS<br>
+                  - <b>(2)</b> Chọn mẫu 01a-SDKP/ĐVDT hoặc 02a-SDKP/ĐVDT<br>
+                  - <b>(3)</b> Tại khung “Danh sách bảng đối chiếu”, nhấn nút “Sửa” tại dòng mẫu 01a-SDKP/ĐVDT hoặc 02a-SDKP/ĐVDT tương ứng.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div
+            class="col-lg-12 mb-4 mt-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+          <div class="member d-flex align-items-start">
+            <div>
+              <img
+                src="images/Toturial/image010.png"
+                width="600"
+                alt=""
+              />
+            </div>
+            <div class="member-info">
+              <h4>Tải dữ liệu lên</h4>
+              <p style="font-size: 20px;">
+                Nhấn vào nút chức năng <b>Tải dữ liệu</b> như hình và chọn đến file excel đã được kết xuất từ phần mềm theo hướng dẫn tại mục II.<br>
+                Cuối cùng chọn <b>Cập nhật</b> để lưu.
+              </p>
+            </div>
+          </div>
+          </div>
+
+          <div
+            class="col-lg-12 mb-4 mt-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+          <div class="member d-flex align-items-start">
+            <div>
+              <img
+                src="images/Toturial/image011.png"
+                width="600"
+                alt=""
+              />
+            </div>
+            <div class="member-info">
+              <h4>Chọn file</h4>
+              <p style="font-size: 20px;">
+                <b>Chọn file</b> cần tải lên và <b>chọn Open.</b>
+              </p>
+            </div>
+          </div>
+          </div>
+
+          <div
+            class="col-lg-12 mb-7 mt-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+          <div class="member d-flex align-items-start">
+            <div>
+              <img
+                src="images/Toturial/image012.png"
+                width="600"
+                alt=""
+              />
+            </div>
+            <div class="member-info">
+              <h4>Cập nhật</h4>
+              <p style="font-size: 20px;">
+                Cuối cùng <b>chọn Cập nhật</b> để lưu.
+              </p>
+            </div>
+          </div>
+          </div>
+
+          <h4 class="text-capitalize">
+            <b>3. Gửi Phê Duyệt Hoặc Lưu Đối Chiếu</b>
+          </h4>
+          <div
+            class="col-lg-12 mt-lg-0"
+          >
+          <div class="member d-flex align-items-start">
+            <div>
+              <img
+                src="images/Toturial/image013.png"
+                width="600"
+                alt=""
+              />
+            </div>
+            <div class="member-info">
+              <h4>Gửi phê duyệt hoặc lưu đối chiếu</h4>
+              <p style="font-size: 20px;">
+                Sau khi hoàn thành các bước như trên giờ bạn có thể <b>Gửi phê duyệt</b> hoặc <b>Lưu</b> đối chiếu này lại.
+              </p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Team Section -->
+
+    <!-- Popup - Modal -->
+    <!-- Modal Ininstall Extension-->
+    <div
+      class="modal fade"
+      id="modalIninstallEx"
+      tabindex="-1"
+      aria-labelledby="modalIninstallEx"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable" style="width: 80%;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">CÀI ĐẶT TIỆN ÍCH HỖ TRỢ</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6 p-4">
+                <p>1. Truy cập cửa hàng Chrome trực tuyến bằng trình duyệt Chrome, Cốc Cốc: <a href="https://chrome.google.com/webstore" target="_blank">https://chrome.google.com/webstore</a>. <br> 
+                  Nhập “VCS Việt Nam” tại ô <Tìm kiếm> và chọn Tiện ích “VCS Việt Nam – PM hỗ trợ dịch vụ công KBNN” tại danh sách kết quả tìm kiếm hoặc truy cập bằng <a href="https://chrome.google.com/webstore/detail/vcs-vi%E1%BB%87t-nam-pm-h%E1%BB%97-tr%E1%BB%A3-d%E1%BB%8B/khbphpogmchkbhaomebifiafedibjpao" target="_blank">link này</a>.</p>
+                <img
+                  src="images/Toturial/image002.png"
+                  width="400"
+                  alt=""
+                />
+              </div>
+              <div class="col-md-6 p-4">
+                <p>2. Thực hiện “Thêm vào Chrome” để cài đặt tiện ích vào trình duyệt.</p>
+                <img
+                  src="images/Toturial/image003.png"
+                  width="400"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Thoát
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
