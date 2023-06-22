@@ -111,19 +111,50 @@
 //   });
 // };
 
-// const formatSheetJSON = (sheetJSON) => {
-//   const formattedJSON = sheetJSON.map((row) => {
-//     const formattedRow = {};
-//     let propIndex = 0; // Biến đếm số lần lặp qua các thuộc tính
+button.onclick = () => {
+  if (!inputFile.value || !rowFill.value) {
+    alert("Các trường không được để trống. Vui lòng chọn file và thử lại!");
+  } else {
+    createHtml();
+  }
+};
 
-//     for (let prop in row) {
-//       const formattedProp = `cell_${propIndex}`;
-//       formattedRow[formattedProp] = row[prop];
-//       propIndex++;
-//     }
-
-//     return formattedRow;
-//   });
-
-//   return formattedJSON;
-// }
+const createHtml = (data) =>{
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        // Thêm button vào trang
+        chrome.scripting.executeScript(
+          {
+            target: { tabId: tabs[0].id },
+            function: () => {
+                // Tìm phần tử tbody của bảng trên trang web
+                const tbody = document.querySelector('tbody');
+                console.log('element',tbody);
+                console.log('data',result);
+                // if (data) {
+                //     // Tạo nội dung HTML cho các hàng của bảng
+                //     let html = '';
+                //     for (let i = 0; i < data[0].length; i++) {
+                //       var obj = data[0][i];
+                //       html += '<tr>';
+                //         html += `<td>${obj.STT}</td>`;
+                //         html += `<td>${obj["Họ tên"]}</td>`;
+                //         html += `<td>${obj["Giới tính"]}</td>`;
+                //         html += `<td>${obj["Ngày sinh"]}</td>`;
+                //       html += '</tr>';
+                //     }
+                
+                //     // Đặt nội dung HTML cho tbody của bảng
+                //     console.log(html);
+                //     tbody.innerHTML = html;
+                //     // return html;
+                //   }
+            },
+          },
+          () => {
+            if (chrome.runtime.lastError) {
+              console.error(chrome.runtime.lastError);
+            }
+          }
+        );
+      });
+ }
